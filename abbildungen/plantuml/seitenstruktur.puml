@@ -1,0 +1,49 @@
+@startmindmap
+
+title Seitenstruktur
+* Home
+
+** Applikationssteuerung
+*** Menüsteuerung
+*** Home Icon
+*** Searchbar
+*** Benachrichtigungen
+**** Benachrichtigung 1
+**** Benachrichtigung 2
+**** Alle Benachrichtigungen
+*** Profil
+**** Profilansicht
+***** Profil bearbeiten
+***** Profil löschen
+**** Abmelden
+*** Einstellungen
+
+** Betrieb
+
+*** Projekte
+**** Meine Projekte
+**** Alle Projekte
+**** Projekt erstellen
+
+*** Aufgaben
+**** Meine Aufgaben
+**** Alle Aufgaben
+**** Aufgabe erstellen
+
+*** Teams
+**** Meine Teams
+**** Alle Teams
+**** Team erstellen
+
+*** Personen
+**** Meine Kontakte
+**** Person finden
+**** Person einladen
+
+** Allgemeine Information
+*** Impressum
+*** Support
+*** Q&A
+
+
+@endmindmap

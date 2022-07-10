@@ -1,0 +1,105 @@
+2
+2 Informationsarchitektur
+2.1 Inhaltlicher Aufbau
+Abbildung 2: Seitenstruktur
+Quelle: Eigene Quelle Wie in der Abbildung Seitenstruktur dargestellt, orientiert sich die Seitenstruktur in drei grundlegende Bereiche. 2.1.1 Betrieb Der Betrieb bildet die Fachlichkeit der SPA ab. Diese ist unterteilt in die vier Hauptobjekte, Projekt, Aufgaben, Teams und Personen. Jedes dieser Objekte hat mögliche mit Ihm verbunde Operationen. Um die Seitenstruktur möglichst flach und einheitlich zu halten, bietet jedes Hauptobjekt drei mögliche Unterkategorien.
+
+3 Meine <Objekte> Die erste ist eine Selektierung der, falls vorhanden, sieben wichtigs-
+ten Objekte dieser Kategorie. Dies können zum Beispiel die sieben meistgenutzten Kontakte einer Person sein oder die aktuellsten Aufgaben. Diese werden je nach größe Tabellarisch oder als Karten angezeigt. Zusätzlich gibt es ein Element auf dieser Anzeige das zu einer vor gefilterten der nächsten Seite Älle <Objekte>"leitet. Alle <Objekte> Unter diesem Punkt werden alle für den Nutzer sichtbaren Objekte einer Kategorie angezeigt. Diese Liste ist Filterbar und Pageable. Ebenfalls gibt es in solchen Listen, falls der Nutzer hierzu berechtigt ist, einen Button der zu dem Punkt «Objekt> erstellen"führt. <Objekt> erstellen Unter diesem Punkt wird man zu einem Formular für die Anlage eines entsprechenden Objektes geleitet. Dieser Punkt ist nur sichtbar, wenn der Nutzer über eine entsprechende Berechtigung verfügt. Alle dieser drei Seiten führen zu einer Instanz des Hauptobjektes. Hier werden im Seiteninhalt neben der Objektansicht auch die restlichen Operationen und Unterobjekte des Objektes abgebildet.
+2.2 Seitenaufbau
+2.2.1 Dashboard Abbildung 3: Seitenstruktur
+Quelle: Eigenes Wireframe: https://wireframe.cc/qkQJUh
+
+4 Die Startseite der Webseite ist entweder die Loginseite oder wenn bereits angemeldet das persönliche Dashboard des Nutzers. Dieses ist Personalisierbar. Es können maximal 7 Karten geladen werden. Diese werden dynamisch angeordnet so, dass sie auf einen Bildschirm mit Breakpoint Large passen. Bei kleineren Breakpoints erhält die Seite eine Scrollfunktion. 2.2.2 Aufgabe Abbildung 4: Seitenstruktur
+Quelle: Eigenes Wireframe: https://wireframe.cc/IyX8ei Diese Seiten sind unter folgendem Kontextpfad erreichbar /app/aufgabe/proj-001. Wobei proj-001 hier der Name bzw die ID der Aufgabe ist. Von einer Aufgabe können folgende Seiten erreicht werden: /app/projekt/proj Das Projekt der Aufgabe app/aufgabe/proj-001/historie Die Historie der Aufgabe in tabellarischer Form p/aufgabe/proj-001/nachfolger Die Nachfolger dieser Aufgabe als Kartenansicht aufgabe/proj-001/vorgaenger Die Vorgänger dieser Aufgabe als Kartenansicht /app/person/fgzjwhb Die Profilseite des Autors oder des Bearbeiters projekt/proj/aufgabe/erstellen Wenn Berechtigt, ein Formular zum erstellen einer neuen Projektaufgabe.
+
+5
+2.3 Funktionaler Aufbau
+2.3.1 Seitenlayout Abbildung 5: Seitenstruktur
+Quelle: Eigene Quelle Da die SPA mehrere verschiedene Steuerelemente besitzt, werden diese in eigene fachliche Bereiche getrennt. Hierbei entfällt die Programmsteuerung aus Abbildung 1 auf die Headernavigation. Die Rubrik Betrieb wird in die Seitennavigation ausgelagert und Allgemeines landet in der Fußzeile. Der Seiteninhalt ist abhängig von der aktuellen URL und hat eine eigene Subnavigation. Diese kann Operationen in Form von Icon mit Tooltipp enthalten, die aktuell für die Seite Sinn machen. Typisch hierfür wären, Teilen, Drucken, Hinzufügen und ähnliche auf den Inhalt bezogene Funktionen. Diese Funktionen sind keine Hauptfunktionen und sollen somit auch um die Kopfzeile nicht überladen. Dadurch entfällt ein beschreibender Text nur auf den Tooltipp. 2.3.2 Responsivität Bei kleineren Endgeräten kann das vollständige Seitenlayout nicht beibehalten werden. Hierzu wurden folgende Breakpoints definiert:
+
+6
+
+Tabelle 1: Breakpoints
+
+Breakpoint name XSmall Small Medium Large XLarge
+
+Media query (max-width: 599.98px) (min-width: 600px) and (max-width: 959.98px) (min-width: 960px) and (max-width: 1279.98px) (min-width: 1280px) and (max-width: 1919.98px) (min-width: 1920px)
+
+Neben den Breakpoints enthält die nachfolgende Tabelle den Zustand, in dem sich Bestandteile des Grundlayouts befinden sollen, wenn die Bildschirmgröße im Breakpoint liegt.
+
+7
+
+Tabelle 2: Verhaltenstabelle Responsives Layout
+
+Komponente Breakpoint
+
+Zustand
+
+Seitennavigation
+
+XSmall, Small Medium, Large, XLarge
+
+Seitennavigation ist eine Mobile Advanced Hamburger Navigation, mit default Zustand geschlossen Seitennavigation ist ein CollapsibleMenü, mit default Zustand offen
+
+Kopfzeile
+
+XSmall, Small
+
+Medium
+
+Large, XLarge
+
+Die Kopfzeile wird auf die Steuerung des Hamburgermenüs und dem Logo mit Seitennamen reduziert. Die anderen Steuerelemente werden in die Seitennavigation ausgelagert. Die Kopfzeile wird um die vorher ausgelagerte Steuerungselemente Suchleiste, Benachrichtigungen, Profil und Einstellungen ergänzt. BEschreibungen der Steuerungen sind als Tooltipp verfügbar. Tooltipps werden nun als Text zu den Steuerelementen hinzugefügt.
+
+Hauptinhalt
+
+XSmall, Small Medium, Large, XLarge
+
+Ist bei offenem Seitenmenü im Hintergrund und nicht bedienbar Passt sich an die Seitennavigation an und nimmt den rest des Bildschirms ein. Ist auch bei offenem Seitenmenü verwendbar.
+
+Zweite Kopfzeile
+
+XSmall, Small, Medium Large, XLarge
+
+nicht verfügbar. FUnktionen sind nun nur in dem Bereich Einstellungen verfügbar. Verfügbar und enthält aktuellen Seitentitel des angezeigten Inhaltes und dazugehörige Operationen wie Teilen oder Drucken
+
+Fußzeile
+
+XSmall, Small
+
+nicht verfügbar. Funktionen sind nun im
+
+unteren Bereich des Seitenmenüs als
+
+Links verfügbar
+
+Medium, Large, XLarge Verfügbar und enthält aktuellen Seitentitel
+
+des angezeigten Inhaltes und dazugehö-
+
+rige Operationen wie Teilen oder Drucken
+
+Quelle: In Anlehnung an https://material.angular.io/cdk/layout/overview Beckert, A.,
+
+Beckert, S., Escherich, B., Mobile Lösungen, 2012, S. 4
+
+Die nachfolgende Grafik stellt exemplarisch das Pagelayout nach Breakpoint Small dar.
+
+8 Abbildung 6: Seitenstruktur
+
+2.3.3
+
+Quelle: Eigene Quelle
+
+9
+3 Anforderungsermittlung
+Die SPA soll im täglichen Betrieb über verschiedene Endgeräte eine Übersicht über aktuelle Aufgaben geben.
+3.1 Navigation
+Der Nutzer hat 4 verschiedene Navigationsbereiche. Diese Trennung erlaubt laut dem Gesetzes der gemeinsamen Region, eine klare Trennung zwischen den unterschiedlichen Navigationsmenüs. Die Headernavigation, enthält auf der linken Seite die Steuerung für die Seitennavigation und das Logo. Auf der rechten Seite befinden sich Elemente zur allgemeinen Steuerung des Programmes. Die Seitennavigation an sich stellt die Hauptnavigation der Webseite dar. Neben dieser Art der Navigation gibt es noch eine Subnavigation mit Steuerelementen für die aktuelle Seite der SPA und eine Footernavigation wo sich das Impressum, die Uhrzeit und der aktuelle Versionsstand der Webseite befindet.
+3.1.1 Headernavigation
+Wie bereits beschrieben dient die Headernavigation zu der allgemeinen Steuerung der SPA. Auf der linken Seite befindet sich ein Icon, das die Seitennavigation schließen und öffnen kann. Nebenan ist das Icon der Webseite, welches den Nutzer auf sein Dashboard, und damit seine Hauptseite zu bringen. Sie ist responsiv und wird ab dem BReakpoint kleiner Medium in die Seitennavigation, durch eine Pipe getrennt, unter die Hauptnavigation integriert. Bei der Layoutgröße Medium werden nur die Icons der Buttons angezeigt, um die Headernavigation nicht zu überladen. Hierbei werden Tooltips für die Icons mit dem Namen
+4 Fazit
+Wünsche Euch allen viel Erfolg für das 7. Semester und bei der Erstellung der Thesis. Über Anregungen und Verbesserung an dieser Vorlage würde ich mich sehr freuen.
+
+
